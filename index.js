@@ -114,20 +114,25 @@
 		$( '#numberProcessed' ).text( numberProcessed.toLocaleString() );
 
     $( '#launch' ).click( function () {
-      var $email = $( '#email' );
-      if ( $email.is( ':valid' ) ) {
-        $( this ).text( 'Launching... ' );
-        $.post( '/heatmap/submit-email.php', {
-          email: $email.val()
-        } )
-        .always( function () {
-          $( 'body' ).addClass( 'map-active' );
-          $done.fadeOut();
-          activateControls();
-        } );
-      } else {
-        alert( 'Please enter a valid email address to proceed.' );
-      }
+		var $email = $( '#email' );
+    //   if ( $email.is( ':valid' ) ) {
+    //     $( this ).text( 'Launching... ' );
+    //     $.post( '/heatmap/submit-email.php', {
+    //       email: $email.val()
+    //     } )
+    //     .always( function () {
+    //       $( 'body' ).addClass( 'map-active' );
+    //       $done.fadeOut();
+    //       activateControls();
+    //     } );
+    //   } else {
+    //     alert( 'Please enter a valid email address to proceed.' );
+    //   }
+		// do it all without an email...?
+		$( this ).text( 'Loading... ' );
+		$( 'body' ).addClass( 'map-active' );
+		$done.fadeOut();
+		activateControls();
     } );
 
 		function activateControls () {
